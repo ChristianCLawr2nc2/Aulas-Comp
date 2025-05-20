@@ -37,3 +37,24 @@ São como rotas API que armazenam informações de ordens para o controller envi
 const professoresRoutes = require('./routes/professores');
 app.use('/professores', professoresRoutes);
 ```
+
+# Aula 6 - Respostas
+
+1 - O model se comunica direto com o banco de dados assim sendo requisitadas informações para ele pelo controller que manda a informação requisitada para o view que mostra ao usuário.
+
+2 - No código seguinte 
+```javascript
+const express = require('express');
+const router = express.Router();
+const controller = require('../controllers/cursoController');
+
+router.post('/', controller.create);
+router.post('/edit/:id', controller.update);
+router.post('/delete/:id', controller.delete);
+
+module.exports = router;
+```
+A linha 6 desse código tem a função de editar no front-end a tabela que está a mostra pelo html para o usuário, usando a função post.
+
+
+3 - Formulários e tabelas HTML organizam e exibem dados no navegador, facilitando a entrada e visualização em projetos simples e eficazes.
